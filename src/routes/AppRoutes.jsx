@@ -17,6 +17,15 @@ import Cp1 from '../pages/Cp1';
 import Cp2 from '../pages/Cp2';
 import MyDirect from '../pages/MyDirect';
 import Referral from '../pages/Referral'
+import MintDashboard from '../pages/MintDashboard';
+import ActivateServers from '../pages/ActivateServers';
+import Portfolios from '../pages/Portfolios';
+import ClaimsHistory from '../pages/ClaimsHistory';
+import TopUp from '../pages/TopUp';
+import SpotCommission from '../pages/SpotCommission';
+import DailyGrowth from '../pages/DailyGrowth';
+import MyRank from '../pages/MyRank';
+import GtoRewards from '../pages/GtoRewards';
 
 function AppRoutes() {
   return (
@@ -40,6 +49,17 @@ function AppRoutes() {
       <Route path="/claim-ownership-newUser" element={<ClaimOwnership />} />
       {/* <Route path="/login" element={<Login />} /> */}
       <Route path="/referral" element={<Referral />} />
+      
+      {/* ROPDY Mint Program Routes */}
+      <Route path="/mint-dashboard" element={<MintDashboard />} />
+      <Route path="/activate-servers" element={<ActivateServers />} />
+      <Route path="/portfolios" element={<Portfolios />} />
+      <Route path="/claims-history" element={<ClaimsHistory />} />
+      <Route path="/top-up" element={<TopUp />} />
+      <Route path="/spot-commission" element={<SpotCommission />} />
+      <Route path="/daily-growth" element={<DailyGrowth />} />
+      <Route path="/my-rank" element={<MyRank />} />
+      <Route path="/gto-rewards" element={<GtoRewards />} />
     </Routes>
   );
 }
