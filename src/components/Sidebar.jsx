@@ -26,13 +26,13 @@ const Sidebar = () => {
     if (isConnected) {
       setIsActive(true);
     }
-  }, [address, isConnected])
+  }, [address, isConnected]);
 
   useEffect(() => {
     if (userAddress) {
       setWalletAddress(userAddress);
     }
-  }, [userAddress])
+  }, [userAddress]);
 
 
   // useEffect(() => {
@@ -57,7 +57,7 @@ const Sidebar = () => {
   // }, [walletPrompted, isConnected, address])
 
 
-  const isUserExist = useStore((state) => state.isUserExist)
+  const isUserExist = useStore((state) => state.isUserExist);
 
   useEffect(() => {
     const checkUserAfterConnect = async () => {
@@ -68,7 +68,7 @@ const Sidebar = () => {
 
           if (isExist) {
 
-            console.log("isExist", isExist)
+            console.log("isExist", isExist);
             const userData = {
               address: address,
               data: {}
@@ -87,7 +87,7 @@ const Sidebar = () => {
       }
     };
     checkUserAfterConnect();
-  }, [walletPrompted, isConnected, address])
+  }, [walletPrompted, isConnected, address]);
 
   const handleConnect = async () => {
     try {
@@ -119,7 +119,7 @@ const Sidebar = () => {
     localStorage.removeItem("UserData");
 
     setUserDisconnected(true);
-  }
+  };
 
   const menuGroups = [
     {
@@ -312,43 +312,6 @@ const Sidebar = () => {
             <p>Powered by RAMA</p>
             <p>v1.0 Beta</p>
           </div>
-        </div>
-      </aside>
-
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-gray-200 dark:bg-black bg-opacity-50 backdrop-blur-sm z-30 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
-    </>
-  );
-};
-
-export default Sidebar;
-                </div>
-                {section.items.map(({ label, icon, path }) => (
-                  <Link
-                    key={path}
-                    to={path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center px-4 py-2 rounded-lg mb-1 transition-colors ${pathname === path
-                      ? "bg-admin-gold-900/50 backdrop-blur-sm text-admin-cyan dark:text-admin-cyan-dark border border-admin-gold-700/50"
-                      : "hover:bg-admin-gold-900/30 text-gray-700 dark:text-gray-300 hover:text-admin-cyan dark:hover:text-admin-cyan-dark"
-                      }`}
-                  >
-                    <span className="mr-3 text-lg">{icon}</span>
-                    <span className="text-sm">{label}</span>
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </nav>
-        </div>
-
-        <div className="p-4 border-t border-admin-gold-900/50 text-center text-sm text-admin-cyan dark:text-admin-cyan-dark flex-shrink-0 bg-white/50 dark:bg-black/50 backdrop-blur-sm">
-          <p>Powered by RAMA</p>
-          <p>v1.0 Beta</p>
         </div>
       </aside>
 
